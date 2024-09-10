@@ -60,7 +60,7 @@ export class VocabularyQuestionaireRepository implements QuestionaireRepositoryI
     }
 
     isCompleted(): boolean {
-        return this.currentIndex >= this.listQuestions.length;
+        return this.isInitialize && this.currentIndex >= this.listQuestions.length;
     }
 
     currentQuestionNumber(): number {
