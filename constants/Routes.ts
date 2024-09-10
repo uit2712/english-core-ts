@@ -11,6 +11,7 @@ export const ROUTES = {
     topicDetail: {
         name: 'topicDetail',
         path: '/topics/:id',
+        alternativePath: 'topicDetail',
     },
     test: {
         name: 'test',
