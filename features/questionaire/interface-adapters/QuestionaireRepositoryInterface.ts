@@ -3,12 +3,12 @@ import { QuestionaireEntity } from '../entities/QuestionaireEntity';
 export interface QuestionaireRepositoryInterface<T> {
     initializeListQuestions(listQuestions: T[]): QuestionaireRepositoryInterface<T>;
     getCurrentQuestion(): QuestionaireEntity<T> | undefined;
-    nextQuestion(): void;
+    nextQuestion(): QuestionaireRepositoryInterface<T>;
     isCompleted(): boolean;
-    currentQuestionNumber(): number;
+    getCurrentQuestionNumber(): number;
     getProgressInText(): string;
     getProgressInPercent(): number;
-    increaseTotalCorrectAnswers(): void;
+    increaseTotalCorrectAnswers(): QuestionaireRepositoryInterface<T>;
     getTotalCorrectAnswers(): number;
     getTotalCorrectAnswersText(): string;
     getTestResultMessage(): string;

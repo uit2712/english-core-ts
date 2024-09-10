@@ -55,20 +55,21 @@ export class VocabularyQuestionaireRepository implements QuestionaireRepositoryI
         return this.listQuestions[this.currentIndex];
     }
 
-    nextQuestion(): void {
+    nextQuestion(): QuestionaireRepositoryInterface<VocabularyEntity> {
         this.currentIndex++;
+        return this;
     }
 
     isCompleted(): boolean {
         return this.isInitialize && this.currentIndex >= this.listQuestions.length;
     }
 
-    currentQuestionNumber(): number {
+    getCurrentQuestionNumber(): number {
         return this.currentIndex + 1;
     }
 
     getProgressInText(): string {
-        return `Question ${this.currentQuestionNumber()}/${this.listQuestions.length}:`;
+        return `Question ${this.getCurrentQuestionNumber()}/${this.listQuestions.length}:`;
     }
 
     getProgressInPercent(): number {
@@ -79,8 +80,9 @@ export class VocabularyQuestionaireRepository implements QuestionaireRepositoryI
         return 0;
     }
 
-    increaseTotalCorrectAnswers(): void {
+    increaseTotalCorrectAnswers(): QuestionaireRepositoryInterface<VocabularyEntity> {
         this.totalCorrectAnswers++;
+        return this;
     }
 
     getTotalCorrectAnswers(): number {
