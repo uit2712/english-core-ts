@@ -1,4 +1,3 @@
-import { BASE_API_URL } from '@/framework/constants/Api';
 import axios from 'axios';
 import { TopicRepositoryInterface } from '../interface-adapters/TopicRepositoryInterface';
 import { GetListTopicsResult } from '../models/GetListTopicsResult';
@@ -8,6 +7,7 @@ import { ErrorMessage } from '@/core/constants/ErrorMessages';
 import { Topic } from '../facades/Topic';
 import { GetListVocabulariesByTopicIdResult } from '@/core/features/vocabulary/models/GetListVocabulariesByTopicIdResult';
 import { Vocabulary } from '@/core/features/vocabulary/facades/Vocabulary';
+import { BASE_API_URL } from '@/framework/constants/Api';
 
 export class TopicRepository implements TopicRepositoryInterface {
     private API_URL = BASE_API_URL + '/topics';
