@@ -5,10 +5,24 @@ import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
     private voices: SpeechSynthesisVoice[] = [];
 
-    private initVoices() {
+    private async initVoices() {
         if (ArrayHelper.isHasItems(this.voices) === false) {
-            this.voices = speechSynthesis.getVoices();
+            this.voices = await this.getVoices();
         }
+    }
+
+    private async getVoices(): Promise<SpeechSynthesisVoice[]> {
+        return new Promise((resolve) => {
+            let voices = window.speechSynthesis.getVoices();
+            if (voices.length !== 0) {
+                resolve(voices);
+            } else {
+                window.speechSynthesis.addEventListener('voiceschanged', function () {
+                    voices = window.speechSynthesis.getVoices();
+                    resolve(voices);
+                });
+            }
+        });
     }
 
     async speak(text: string): Promise<void> {
@@ -16,7 +30,7 @@ export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
             return;
         }
 
-        this.initVoices();
+        await this.initVoices();
         if (ArrayHelper.isHasItems(this.voices) === false) {
             return;
         }
