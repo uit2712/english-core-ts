@@ -1,4 +1,4 @@
-import { BASE_API_URL } from '@/core/constants/Api';
+import { BASE_API_URL } from '@/framework/constants/Api';
 import axios from 'axios';
 import { MessageHelper } from '@/core/helpers/MessageHelper';
 import { ErrorMessage } from '@/core/constants/ErrorMessages';
