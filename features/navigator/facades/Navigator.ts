@@ -4,8 +4,8 @@ import { RouterRepositoryInteface } from '../interface-adapters/RouterRepository
 import { RouteRepository } from '@/framework/features/navigator/repositories/RouteRepository';
 
 export class Navigator {
-    private static router: RouterRepositoryInteface;
-    private static route: RouteRepositoryInteface;
+    private static router: RouterRepositoryInteface<any>;
+    private static route: RouteRepositoryInteface<any>;
 
     public static getRouter() {
         if (!this.router) {

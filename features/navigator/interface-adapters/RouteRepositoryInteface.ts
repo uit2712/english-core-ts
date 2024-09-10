@@ -1,5 +1,5 @@
-export interface RouteRepositoryInteface {
-    setRoute<T>(route: T): void;
+export interface RouteRepositoryInteface<T> {
+    setRoute(route: T): void;
     getPathParamAsString(name: string, defaultValue?: string): string;
     getPathParamAsNumber(name: string, defaultValue?: number): number;
     getQueryParamAsString(name: string, defaultValue?: string): string;
