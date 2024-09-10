@@ -1,7 +1,7 @@
 import { QuestionaireEntity } from '../entities/QuestionaireEntity';
 
 export interface QuestionaireRepositoryInterface<T> {
-    initializeListQuestions(listQuestions: T[]): void;
+    initializeListQuestions(listQuestions: T[]): QuestionaireRepositoryInterface<T>;
     getCurrentQuestion(): QuestionaireEntity<T> | undefined;
     nextQuestion(): void;
     isCompleted(): boolean;

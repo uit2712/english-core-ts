@@ -17,9 +17,9 @@ export class VocabularyQuestionaireRepository implements QuestionaireRepositoryI
         }
     }
 
-    initializeListQuestions(listQuestions: VocabularyEntity[]): void {
+    initializeListQuestions(listQuestions: VocabularyEntity[]): QuestionaireRepositoryInterface<VocabularyEntity> {
         if (listQuestions.length === 0 || this.isInitialize) {
-            return;
+            return this;
         }
 
         const shuffleQuestions = ArrayHelper.shuffle(listQuestions);
@@ -44,6 +44,7 @@ export class VocabularyQuestionaireRepository implements QuestionaireRepositoryI
         }
 
         this.isInitialize = true;
+        return this;
     }
 
     getCurrentQuestion(): QuestionaireEntity<VocabularyEntity> | undefined {
