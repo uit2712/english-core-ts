@@ -6,6 +6,7 @@ export const ROUTES = {
     topics: {
         name: 'topics',
         path: '/groups/:groupId/topics',
+        alternativePath: 'choose-topic',
     },
     topicDetail: {
         name: 'topicDetail',

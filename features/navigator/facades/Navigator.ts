@@ -5,7 +5,7 @@ import { RouteRepository } from '@/framework/features/navigator/repositories/Rou
 
 export class Navigator {
     private static router: RouterRepositoryInteface<any>;
-    private static route: RouteRepositoryInteface<any>;
+    private static route: RouteRepositoryInteface;
 
     public static getRouter() {
         if (!this.router) {
