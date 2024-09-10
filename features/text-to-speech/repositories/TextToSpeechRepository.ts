@@ -14,7 +14,7 @@ export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
     private async getVoices(): Promise<SpeechSynthesisVoice[]> {
         return new Promise((resolve) => {
             let voices = window.speechSynthesis.getVoices();
-            if (voices.length !== 0) {
+            if (ArrayHelper.isHasItems(voices)) {
                 resolve(voices);
             } else {
                 window.speechSynthesis.addEventListener('voiceschanged', function () {
