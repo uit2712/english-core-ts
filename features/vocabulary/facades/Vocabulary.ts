@@ -1,5 +1,5 @@
-import { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
-import { VocabularyMapperInterface } from '../interface-adapters/VocabularyMapperInterface';
+import type { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
+import type { VocabularyMapperInterface } from '../interface-adapters/VocabularyMapperInterface';
 import { VocabularyApiMapper } from '../mappers/VocabularyApiMapper';
 import { VocabularyMapper } from '../mappers/VocabularyMapper';
 

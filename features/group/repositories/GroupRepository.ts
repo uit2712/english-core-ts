@@ -2,7 +2,7 @@ import { BASE_API_URL } from '@/framework/constants/Api';
 import axios from 'axios';
 import { MessageHelper } from '@/core/helpers/MessageHelper';
 import { ErrorMessage } from '@/core/constants/ErrorMessages';
-import { GroupRepositoryInterface } from '@/core/features/group/interface-adapters/GroupRepositoryInterface';
+import type { GroupRepositoryInterface } from '@/core/features/group/interface-adapters/GroupRepositoryInterface';
 import { GetListGroupsResult } from '@/core/features/group/models/GetListGroupsResult';
 import { Group } from '@/core/features/group/facades/Group';
 import { GetGroupResult } from '@/core/features/group/models/GetGroupResult';

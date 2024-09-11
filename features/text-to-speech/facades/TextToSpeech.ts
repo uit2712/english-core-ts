@@ -1,4 +1,4 @@
-import { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
+import type { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
 import { TextToSpeechRepository } from '../repositories/TextToSpeechRepository';
 
 export class TextToSpeech {

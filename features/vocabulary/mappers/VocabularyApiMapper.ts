@@ -1,7 +1,7 @@
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { StringHelper } from '@/core/helpers/StringHelper';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
-import { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
+import type { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
 import { VocabularyEntity } from '../entities/VocabularyEntity';
 
 export class VocabularyApiMapper implements VocabularyApiMapperInterface {

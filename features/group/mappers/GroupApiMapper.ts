@@ -1,6 +1,6 @@
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { GroupEntity } from '../entities/GroupEntity';
-import { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
+import type { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
 import { StringHelper } from '@/core/helpers/StringHelper';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 

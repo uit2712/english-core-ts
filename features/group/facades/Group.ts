@@ -1,6 +1,6 @@
-import { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
-import { GroupRepositoryInterface } from '../interface-adapters/GroupRepositoryInterface';
-import { StorageGroupRepositoryInterface } from '../interface-adapters/StorageGroupRepositoryInterface';
+import type { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
+import type { GroupRepositoryInterface } from '../interface-adapters/GroupRepositoryInterface';
+import type { StorageGroupRepositoryInterface } from '../interface-adapters/StorageGroupRepositoryInterface';
 import { GroupApiMapper } from '../mappers/GroupApiMapper';
 import { StorageGroupRepository } from '@/framework/features/group/repositories/StorageGroupRepository';
 import { GroupRepository } from '../repositories/GroupRepository';

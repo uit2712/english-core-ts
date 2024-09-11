@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TopicRepositoryInterface } from '../interface-adapters/TopicRepositoryInterface';
+import type { TopicRepositoryInterface } from '../interface-adapters/TopicRepositoryInterface';
 import { GetListTopicsResult } from '../models/GetListTopicsResult';
 import { GetTopicResult } from '../models/GetTopicResult';
 import { MessageHelper } from '@/core/helpers/MessageHelper';

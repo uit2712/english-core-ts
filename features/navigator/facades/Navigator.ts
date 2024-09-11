@@ -1,6 +1,6 @@
 import { RouterRepository } from '@/framework/features/navigator/repositories/RouterRepository';
-import { RouteRepositoryInteface } from '../interface-adapters/RouteRepositoryInteface';
-import { RouterRepositoryInteface } from '../interface-adapters/RouterRepositoryInteface';
+import type { RouteRepositoryInteface } from '../interface-adapters/RouteRepositoryInteface';
+import type { RouterRepositoryInteface } from '../interface-adapters/RouterRepositoryInteface';
 import { RouteRepository } from '@/framework/features/navigator/repositories/RouteRepository';
 
 export class Navigator {

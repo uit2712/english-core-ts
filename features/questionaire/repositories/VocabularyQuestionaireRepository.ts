@@ -1,7 +1,7 @@
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 import { VocabularyEntity } from '../../vocabulary/entities/VocabularyEntity';
 import { NumberHelper } from '@/core/helpers/NumberHelper';
-import { QuestionaireRepositoryInterface } from '@/core/features/questionaire/interface-adapters/QuestionaireRepositoryInterface';
+import type { QuestionaireRepositoryInterface } from '@/core/features/questionaire/interface-adapters/QuestionaireRepositoryInterface';
 import { QuestionaireEntity } from '@/core/features/questionaire/entities/QuestionaireEntity';
 
 export class VocabularyQuestionaireRepository implements QuestionaireRepositoryInterface<VocabularyEntity> {

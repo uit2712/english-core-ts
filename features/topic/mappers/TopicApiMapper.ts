@@ -1,7 +1,7 @@
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { StringHelper } from '@/core/helpers/StringHelper';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
-import { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
+import type { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
 import { TopicEntity } from '../entities/TopicEntity';
 
 export class TopicApiMapper implements TopicApiMapperInterface {

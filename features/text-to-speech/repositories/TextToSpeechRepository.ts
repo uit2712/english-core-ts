@@ -1,5 +1,5 @@
 import { StringHelper } from '@/core/helpers/StringHelper';
-import { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
+import type { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 
 export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
