@@ -2,7 +2,7 @@ import { BASE_API_URL } from '@/framework/constants/Api';
 import axios from 'axios';
 import { MessageHelper } from '@/core/helpers/MessageHelper';
 import { ErrorMessage } from '@/core/constants/ErrorMessages';
-import type { GroupRepositoryInterface } from '@/core/features/group/interface-adapters/GroupRepositoryInterface';
+import { GroupRepositoryInterface } from '@/core/features/group/interface-adapters/GroupRepositoryInterface';
 import { GetListGroupsResult } from '@/core/features/group/models/GetListGroupsResult';
 import { Group } from '@/core/features/group/facades/Group';
 import { GetGroupResult } from '@/core/features/group/models/GetGroupResult';
@@ -16,7 +16,12 @@ export class GroupRepository implements GroupRepositoryInterface {
         const result = new GetListGroupsResult();
 
         try {
-            const response = await axios.get(this.API_URL);
+            const response = await axios.get(this.API_URL, {
+                params: {
+                    page: 0,
+                    perPage: 10,
+                },
+            });
             const { success, data, message } = response.data;
 
             result.success = success ?? false;
