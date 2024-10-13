@@ -1,5 +1,5 @@
-import { Questionaire } from '../../questionaire/facades/Questionaire';
-import { TopicApi } from '../../topic/facades/TopicApi';
+import { Questionaire } from '../../../features/questionaire/facades/Questionaire';
+import { TopicApi } from '../../../features/topic/facades/TopicApi';
 
 export class GetListVocabulariesPageListTopicDetailUseCase {
     public async invoke(topicId: number) {
