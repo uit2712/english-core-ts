@@ -1,5 +1,5 @@
 import { GroupApi } from '@/core/features/group/facades/GroupApi';
-import { Topic } from '../../topic/facades/Topic';
+import { Topic } from '../../../features/topic/facades/Topic';
 
 export class GetListTopicsPageListTopicsUseCase {
     public async invoke(groupId: number) {

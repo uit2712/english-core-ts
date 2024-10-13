@@ -1,7 +1,7 @@
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { Navigator } from '@/core/features/navigator/facades/Navigator';
-import { Questionaire } from '../../questionaire/facades/Questionaire';
-import { Topic } from '../../topic/facades/Topic';
+import { Questionaire } from '../../../features/questionaire/facades/Questionaire';
+import { Topic } from '../../../features/topic/facades/Topic';
 
 export class SelectTopicPageListTopicsUseCase {
     public invoke(id: number) {
