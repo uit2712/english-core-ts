@@ -1,7 +1,7 @@
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { Group } from '@/core/features/group/facades/Group';
 import { Navigator } from '@/core/features/navigator/facades/Navigator';
-import { Questionaire } from '../../questionaire/facades/Questionaire';
+import { Questionaire } from '@/core/features/questionaire/facades/Questionaire';
 
 export class SelectGroupPageListGroupsUseCase {
     public invoke(id: number) {
