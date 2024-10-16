@@ -5,6 +5,7 @@ export class Result<T> {
     public message: string = '';
     public responseCode: number = HttpStatusCode.Ok;
     public data: T | null = null;
+    public code: string = '';
 
     public copyExceptData<U>(result: Result<U>) {
         if (null === result) {

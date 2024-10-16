@@ -33,6 +33,7 @@ export class GroupRepository implements GroupRepositoryInterface {
             return result;
         } catch (ex: any) {
             result.message = ex.message;
+            result.code = ex.code ?? '';
             return result;
         }
     }
