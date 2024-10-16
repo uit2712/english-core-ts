@@ -77,6 +77,21 @@ describe('GetAllGroupsUseCase', () => {
         testReturnEmptyDataBecauseOfInvalidResponse(dataset[index], index);
     }
 
+    it('network error', async () => {
+        jest.spyOn(axios, 'get').mockRejectedValue(new Error('Network Error'));
+        const expectedResult = {
+            success: false,
+            data: [],
+            message: 'Network Error',
+        };
+
+        const actualResult = await GroupApi.getAll();
+
+        expect(actualResult.success).toEqual(expectedResult.success);
+        expect(actualResult.message).toEqual(expectedResult.message);
+        expect(actualResult.data).toEqual(expectedResult.data);
+    });
+
     it('get valid data', async () => {
         const expectedResult = {
             success: true,
