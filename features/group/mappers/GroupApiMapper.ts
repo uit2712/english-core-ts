@@ -11,14 +11,13 @@ export class GroupApiMapper implements GroupApiMapperInterface {
             return null;
         }
 
-        const result = new GroupEntity();
-        if (NumberHelper.isPositive(data.id)) {
-            result.id = data.id;
+        if (NumberHelper.isPositive(data.id) === false || StringHelper.isHasValue(data.name) === false) {
+            return null;
         }
 
-        if (StringHelper.isHasValue(data.name)) {
-            result.name = data.name;
-        }
+        const result = new GroupEntity();
+        result.id = data.id;
+        result.name = data.name;
 
         return result;
     }
