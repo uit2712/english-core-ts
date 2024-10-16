@@ -11,7 +11,10 @@ describe('GetAllGroupsUseCase', () => {
             data: [],
         };
         axios.get.mockReturnValue({
-            data: expectedResult,
+            data: {
+                success: false,
+                data: [],
+            },
         });
 
         const actualResult = await GroupApi.getAll();
@@ -69,4 +72,24 @@ describe('GetAllGroupsUseCase', () => {
     for (let index = 0; index < dataset.length; index++) {
         testReturnEmptyDataBecauseOfInvalidResponse(dataset[index], index);
     }
+
+    it('get valid data', async () => {
+        const expectedResult = {
+            success: true,
+            data: [
+                {
+                    id: 1,
+                    name: 'Test',
+                },
+            ],
+        };
+        axios.get.mockReturnValue({
+            data: expectedResult,
+        });
+
+        const actualResult = await GroupApi.getAll();
+
+        expect(actualResult.success).toEqual(expectedResult.success);
+        expect(actualResult.data).toEqual(expectedResult.data);
+    });
 });
