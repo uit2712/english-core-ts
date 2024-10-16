@@ -43,6 +43,10 @@ describe('GetAllGroupsUseCase', () => {
     dataset = [
         {
             success: false,
+            data: [null],
+        },
+        {
+            success: false,
             data: [
                 {
                     id: 0,
