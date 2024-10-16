@@ -101,4 +101,54 @@ describe('GetListTopicsByGroupIdUseCase', () => {
     for (let index = 0; index < dataset.length; index++) {
         testInvalidResponseItemId(dataset[index], index);
     }
+
+    function testInvalidResponseItemName({ id, expectedResult, apiResult }: DatasetItem, index: number) {
+        it(`invalid response item name with data set #${index}`, async () => {
+            axios.get.mockReturnValue({
+                data: apiResult,
+            });
+
+            const actualResult = await GroupApi.getListTopics(id);
+            expect(actualResult.success).toEqual(expectedResult.success);
+            expect(actualResult.data).toEqual(expectedResult.data);
+        });
+    }
+
+    dataset = [
+        {
+            id: 1,
+            expectedResult: {
+                success: true,
+                data: [],
+            },
+            apiResult: {
+                success: true,
+                data: [
+                    {
+                        id: 1,
+                        name: '',
+                    },
+                ],
+            },
+        },
+        {
+            id: 1,
+            expectedResult: {
+                success: true,
+                data: [],
+            },
+            apiResult: {
+                success: true,
+                data: [
+                    {
+                        id: 1,
+                        name: '     ',
+                    },
+                ],
+            },
+        },
+    ];
+    for (let index = 0; index < dataset.length; index++) {
+        testInvalidResponseItemName(dataset[index], index);
+    }
 });
