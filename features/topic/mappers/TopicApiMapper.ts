@@ -12,9 +12,11 @@ export class TopicApiMapper implements TopicApiMapperInterface {
         }
 
         const result = new TopicEntity();
-        if (NumberHelper.isPositive(data.id)) {
-            result.id = data.id;
+        if (NumberHelper.isPositive(data.id) === false) {
+            return null;
         }
+
+        result.id = data.id;
 
         if (StringHelper.isHasValue(data.name)) {
             result.name = data.name;

@@ -5,7 +5,6 @@ import { Group } from '@/core/features/group/facades/Group';
 import {
     GroupRepositoryInterface
 } from '@/core/features/group/interface-adapters/GroupRepositoryInterface';
-import { GetGroupResult } from '@/core/features/group/models/GetGroupResult';
 import { GetListGroupsResult } from '@/core/features/group/models/GetListGroupsResult';
 import { Topic } from '@/core/features/topic/facades/Topic';
 import { GetListTopicsResult } from '@/core/features/topic/models/GetListTopicsResult';
@@ -36,10 +35,6 @@ export class GroupRepository implements GroupRepositoryInterface {
             result.code = ex.code ?? '';
             return result;
         }
-    }
-
-    async get(id: number): Promise<GetGroupResult> {
-        throw new Error('Method not implemented.');
     }
 
     async getListTopics(id: number): Promise<GetListTopicsResult> {
