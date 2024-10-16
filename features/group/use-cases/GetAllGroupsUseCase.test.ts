@@ -1,16 +1,18 @@
-import { GroupApi } from '../facades/GroupApi';
+import axios from 'axios';
 
-const axios = require('axios');
+import { GroupApi } from '../facades/GroupApi';
 
 let dataset: any[] = [];
 
 describe('GetAllGroupsUseCase', () => {
+    const mockAxiosGet = jest.spyOn(axios, 'get');
+
     it('get empty data', async () => {
         const expectedResult = {
             success: false,
             data: [],
         };
-        axios.get.mockReturnValue({
+        mockAxiosGet.mockResolvedValue({
             data: {
                 success: false,
                 data: [],
@@ -29,7 +31,7 @@ describe('GetAllGroupsUseCase', () => {
                 success: false,
                 data: [],
             };
-            axios.get.mockReturnValue({
+            mockAxiosGet.mockResolvedValue({
                 data,
             });
 
@@ -78,7 +80,7 @@ describe('GetAllGroupsUseCase', () => {
     }
 
     it('network error', async () => {
-        jest.spyOn(axios, 'get').mockRejectedValue(new Error('Network Error'));
+        mockAxiosGet.mockRejectedValue(new Error('Network Error'));
         const expectedResult = {
             success: false,
             data: [],
@@ -102,7 +104,7 @@ describe('GetAllGroupsUseCase', () => {
                 },
             ],
         };
-        axios.get.mockReturnValue({
+        mockAxiosGet.mockResolvedValue({
             data: expectedResult,
         });
 
