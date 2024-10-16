@@ -23,6 +23,8 @@ describe('GetAllGroupsUseCase', () => {
 
         expect(actualResult.success).toEqual(expectedResult.success);
         expect(actualResult.data).toEqual(expectedResult.data);
+
+        mockAxiosGet.mockReset();
     });
 
     function testReturnEmptyDataBecauseOfInvalidResponse(data: any, index: number) {
@@ -39,6 +41,8 @@ describe('GetAllGroupsUseCase', () => {
 
             expect(actualResult.success).toEqual(expectedResult.success);
             expect(actualResult.data).toEqual(expectedResult.data);
+
+            mockAxiosGet.mockReset();
         });
     }
 
@@ -92,6 +96,8 @@ describe('GetAllGroupsUseCase', () => {
         expect(actualResult.success).toEqual(expectedResult.success);
         expect(actualResult.message).toEqual(expectedResult.message);
         expect(actualResult.data).toEqual(expectedResult.data);
+
+        mockAxiosGet.mockReset();
     });
 
     it('get valid data', async () => {
@@ -112,5 +118,7 @@ describe('GetAllGroupsUseCase', () => {
 
         expect(actualResult.success).toEqual(expectedResult.success);
         expect(actualResult.data).toEqual(expectedResult.data);
+
+        mockAxiosGet.mockReset();
     });
 });

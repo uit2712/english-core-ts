@@ -29,6 +29,8 @@ describe('GetListTopicsByGroupIdUseCase', () => {
             const actualResult = await GroupApi.getListTopics(id);
             expect(actualResult.success).toEqual(expectedResult.success);
             expect(actualResult.data).toEqual(expectedResult.data);
+
+            mockAxiosGet.mockReset();
         });
     }
 
@@ -63,6 +65,8 @@ describe('GetListTopicsByGroupIdUseCase', () => {
             const actualResult = await GroupApi.getListTopics(id);
             expect(actualResult.success).toEqual(expectedResult.success);
             expect(actualResult.data).toEqual(expectedResult.data);
+
+            mockAxiosGet.mockReset();
         });
     }
 
@@ -113,6 +117,8 @@ describe('GetListTopicsByGroupIdUseCase', () => {
             const actualResult = await GroupApi.getListTopics(id);
             expect(actualResult.success).toEqual(expectedResult.success);
             expect(actualResult.data).toEqual(expectedResult.data);
+
+            mockAxiosGet.mockReset();
         });
     }
 
@@ -167,5 +173,30 @@ describe('GetListTopicsByGroupIdUseCase', () => {
         expect(actualResult.success).toEqual(expectedResult.success);
         expect(actualResult.message).toEqual(expectedResult.message);
         expect(actualResult.data).toEqual(expectedResult.data);
+
+        mockAxiosGet.mockReset();
+    });
+
+    it('valid data', async () => {
+        const expectedResult: Partial<GetListTopicsResult> = {
+            success: true,
+            data: [
+                {
+                    id: 1,
+                    name: 'ok',
+                    groupId: 0,
+                },
+            ],
+        };
+        mockAxiosGet.mockResolvedValue({
+            data: expectedResult,
+        });
+
+        const actualResult = await GroupApi.getListTopics(1);
+
+        expect(actualResult.success).toEqual(expectedResult.success);
+        expect(actualResult.data).toEqual(expectedResult.data);
+
+        mockAxiosGet.mockReset();
     });
 });
