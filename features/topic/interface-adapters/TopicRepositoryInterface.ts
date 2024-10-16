@@ -1,4 +1,7 @@
-import { GetListVocabulariesByTopicIdResult } from '@/core/features/vocabulary/models/GetListVocabulariesByTopicIdResult';
+import {
+    GetListVocabulariesByTopicIdResult
+} from '@/core/features/vocabulary/models/GetListVocabulariesByTopicIdResult';
+
 import { GetListTopicsResult } from '../models/GetListTopicsResult';
 import { GetTopicResult } from '../models/GetTopicResult';
 

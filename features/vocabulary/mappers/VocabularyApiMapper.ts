@@ -1,9 +1,10 @@
+import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { StringHelper } from '@/core/helpers/StringHelper';
-import { ArrayHelper } from '@/core/helpers/ArrayHelper';
-import type { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
+
 import { VocabularyEntity } from '../entities/VocabularyEntity';
 
+import type { VocabularyApiMapperInterface } from '../interface-adapters/VocabularyApiMapperInterface';
 export class VocabularyApiMapper implements VocabularyApiMapperInterface {
     mapFromApiToEntity(data: any): VocabularyEntity | null {
         if (null === data) {

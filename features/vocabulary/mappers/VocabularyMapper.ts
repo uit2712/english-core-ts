@@ -1,7 +1,7 @@
 import { VocabularyEntity } from '../entities/VocabularyEntity';
-import type { VocabularyMapperInterface } from '../interface-adapters/VocabularyMapperInterface';
 import { AnswerViewModel } from '../view-models/AnswerViewModel';
 
+import type { VocabularyMapperInterface } from '../interface-adapters/VocabularyMapperInterface';
 export class VocabularyMapper implements VocabularyMapperInterface {
     mapFromEntityToAnswerNameViewModel(data?: VocabularyEntity | null): AnswerViewModel | null {
         if (!data) {

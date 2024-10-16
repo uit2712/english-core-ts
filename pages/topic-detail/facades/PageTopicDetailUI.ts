@@ -1,4 +1,6 @@
-import { GetListVocabulariesPageListTopicDetailUseCase } from '../use-cases/GetListVocabulariesPageListTopicDetailUseCase';
+import {
+    GetListVocabulariesPageListTopicDetailUseCase
+} from '../use-cases/GetListVocabulariesPageListTopicDetailUseCase';
 
 export class PageTopicDetailUI {
     private static getListVocabulariesPageListTopicDetailUseCase: GetListVocabulariesPageListTopicDetailUseCase;

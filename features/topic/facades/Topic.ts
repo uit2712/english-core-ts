@@ -1,10 +1,13 @@
-import { StorageTopicRepository } from '@/framework/features/topic/repositories/StorageTopicRepository';
-import type { StorageTopicRepositoryInterface } from '../interface-adapters/StorageTopicRepositoryInterface';
-import type { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
-import type { TopicRepositoryInterface } from '../interface-adapters/TopicRepositoryInterface';
+import {
+    StorageTopicRepository
+} from '@/framework/features/topic/repositories/StorageTopicRepository';
+
 import { TopicApiMapper } from '../mappers/TopicApiMapper';
 import { TopicRepository } from '../repositories/TopicRepository';
 
+import type { StorageTopicRepositoryInterface } from '../interface-adapters/StorageTopicRepositoryInterface';
+import type { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
+import type { TopicRepositoryInterface } from '../interface-adapters/TopicRepositoryInterface';
 export class Topic {
     private static apiMapper: TopicApiMapperInterface;
     private static repo: TopicRepositoryInterface;

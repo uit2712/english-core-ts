@@ -1,7 +1,9 @@
 import { VocabularyEntity } from '@/core/features/vocabulary/entities/VocabularyEntity';
-import type { StorageQuestionaireRepositoryInterface } from '../interface-adapters/StorageQuestionaireRepositoryInterface';
-import { StorageVocabularyQuestionaireRepository } from '@/framework/features/questionaire/repositories/StorageVocabularyQuestionaireRepository';
+import {
+    StorageVocabularyQuestionaireRepository
+} from '@/framework/features/questionaire/repositories/StorageVocabularyQuestionaireRepository';
 
+import type { StorageQuestionaireRepositoryInterface } from '../interface-adapters/StorageQuestionaireRepositoryInterface';
 export class Questionaire {
     private static vocaStorage: StorageQuestionaireRepositoryInterface<VocabularyEntity>;
 

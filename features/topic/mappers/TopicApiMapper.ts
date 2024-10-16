@@ -1,9 +1,10 @@
+import { ArrayHelper } from '@/core/helpers/ArrayHelper';
 import { NumberHelper } from '@/core/helpers/NumberHelper';
 import { StringHelper } from '@/core/helpers/StringHelper';
-import { ArrayHelper } from '@/core/helpers/ArrayHelper';
-import type { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
+
 import { TopicEntity } from '../entities/TopicEntity';
 
+import type { TopicApiMapperInterface } from '../interface-adapters/TopicApiMapperInterface';
 export class TopicApiMapper implements TopicApiMapperInterface {
     mapFromApiToEntity(data: any): TopicEntity | null {
         if (null === data) {

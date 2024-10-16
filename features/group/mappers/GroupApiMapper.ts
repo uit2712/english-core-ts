@@ -1,9 +1,10 @@
-import { NumberHelper } from '@/core/helpers/NumberHelper';
-import { GroupEntity } from '../entities/GroupEntity';
-import type { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
-import { StringHelper } from '@/core/helpers/StringHelper';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
+import { NumberHelper } from '@/core/helpers/NumberHelper';
+import { StringHelper } from '@/core/helpers/StringHelper';
 
+import { GroupEntity } from '../entities/GroupEntity';
+
+import type { GroupApiMapperInterface } from '../interface-adapters/GroupApiMapperInterface';
 export class GroupApiMapper implements GroupApiMapperInterface {
     mapFromApiToEntity(data: any): GroupEntity | null {
         if (null === data) {

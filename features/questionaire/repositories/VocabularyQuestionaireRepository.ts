@@ -1,9 +1,10 @@
-import { ArrayHelper } from '@/core/helpers/ArrayHelper';
-import { VocabularyEntity } from '../../vocabulary/entities/VocabularyEntity';
-import { NumberHelper } from '@/core/helpers/NumberHelper';
-import type { QuestionaireRepositoryInterface } from '@/core/features/questionaire/interface-adapters/QuestionaireRepositoryInterface';
 import { QuestionaireEntity } from '@/core/features/questionaire/entities/QuestionaireEntity';
+import { ArrayHelper } from '@/core/helpers/ArrayHelper';
+import { NumberHelper } from '@/core/helpers/NumberHelper';
 
+import { VocabularyEntity } from '../../vocabulary/entities/VocabularyEntity';
+
+import type { QuestionaireRepositoryInterface } from '@/core/features/questionaire/interface-adapters/QuestionaireRepositoryInterface';
 export class VocabularyQuestionaireRepository implements QuestionaireRepositoryInterface<VocabularyEntity> {
     private listQuestions: QuestionaireEntity<VocabularyEntity>[] = [];
     private totalAnswers: number = 4;

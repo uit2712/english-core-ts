@@ -1,4 +1,6 @@
-import { GetListGroupsPageListGroupsUseCase } from '../use-cases/GetListGroupsPageListGroupsUseCase';
+import {
+    GetListGroupsPageListGroupsUseCase
+} from '../use-cases/GetListGroupsPageListGroupsUseCase';
 import { SelectGroupPageListGroupsUseCase } from '../use-cases/SelectGroupPageListGroupsUseCase';
 
 export class PageListGroupsUI {

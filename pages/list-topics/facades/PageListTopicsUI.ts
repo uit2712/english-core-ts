@@ -1,4 +1,6 @@
-import { GetListTopicsPageListTopicsUseCase } from '../use-cases/GetListTopicsPageListTopicsUseCase';
+import {
+    GetListTopicsPageListTopicsUseCase
+} from '../use-cases/GetListTopicsPageListTopicsUseCase';
 import { GetTitlePageListTopicsUseCase } from '../use-cases/GetTitlePageListTopicsUseCase';
 import { SelectTopicPageListTopicsUseCase } from '../use-cases/SelectTopicPageListTopicsUseCase';
 

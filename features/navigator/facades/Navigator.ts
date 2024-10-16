@@ -1,8 +1,8 @@
+import { RouteRepository } from '@/framework/features/navigator/repositories/RouteRepository';
 import { RouterRepository } from '@/framework/features/navigator/repositories/RouterRepository';
+
 import type { RouteRepositoryInteface } from '../interface-adapters/RouteRepositoryInteface';
 import type { RouterRepositoryInteface } from '../interface-adapters/RouterRepositoryInteface';
-import { RouteRepository } from '@/framework/features/navigator/repositories/RouteRepository';
-
 export class Navigator {
     private static router: RouterRepositoryInteface<any>;
     private static route: RouteRepositoryInteface;

@@ -1,7 +1,7 @@
-import { StringHelper } from '@/core/helpers/StringHelper';
-import type { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
+import { StringHelper } from '@/core/helpers/StringHelper';
 
+import type { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
 export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
     private voices: SpeechSynthesisVoice[] = [];
 

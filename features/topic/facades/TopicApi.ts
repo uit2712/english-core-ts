@@ -1,4 +1,6 @@
-import { GetListVocabulariesByTopicIdUseCase } from '../use-cases/GetListVocabulariesByTopicIdUseCase';
+import {
+    GetListVocabulariesByTopicIdUseCase
+} from '../use-cases/GetListVocabulariesByTopicIdUseCase';
 
 export class TopicApi {
     private static getListVocabulariesByTopicIdUseCase: GetListVocabulariesByTopicIdUseCase;

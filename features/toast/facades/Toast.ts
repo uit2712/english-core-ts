@@ -1,4 +1,5 @@
 import { ToastRepository } from '@/framework/features/toast/repositories/ToastRepository';
+
 import type { ToastRepositoryInteface } from '../interface-adapters/ToastRepositoryInteface';
 
 export class Toast {
