@@ -1,10 +1,10 @@
+import axios from 'axios';
+
 import { ErrorMessage } from '@/core/constants/ErrorMessages';
 import { MessageHelper } from '@/core/helpers/MessageHelper';
 
 import { GetListTopicsResult } from '../../topic/models/GetListTopicsResult';
 import { GroupApi } from '../facades/GroupApi';
-
-const axios = require('axios');
 
 interface DatasetItem {
     id: any;
@@ -13,11 +13,13 @@ interface DatasetItem {
 }
 
 describe('GetListTopicsByGroupIdUseCase', () => {
+    const mockAxiosGet = jest.spyOn(axios, 'get');
+
     let dataset: DatasetItem[] = [];
 
     function testInvalidId({ id, expectedResult }: DatasetItem, index: number) {
         it(`invalid id with data set #${index}`, async () => {
-            axios.get.mockReturnValue({
+            mockAxiosGet.mockResolvedValue({
                 data: {
                     success: false,
                     data: [],
@@ -54,7 +56,7 @@ describe('GetListTopicsByGroupIdUseCase', () => {
 
     function testInvalidResponseItemId({ id, expectedResult, apiResult }: DatasetItem, index: number) {
         it(`invalid response item id with data set #${index}`, async () => {
-            axios.get.mockReturnValue({
+            mockAxiosGet.mockResolvedValue({
                 data: apiResult,
             });
 
@@ -104,7 +106,7 @@ describe('GetListTopicsByGroupIdUseCase', () => {
 
     function testInvalidResponseItemName({ id, expectedResult, apiResult }: DatasetItem, index: number) {
         it(`invalid response item name with data set #${index}`, async () => {
-            axios.get.mockReturnValue({
+            mockAxiosGet.mockResolvedValue({
                 data: apiResult,
             });
 
@@ -151,4 +153,19 @@ describe('GetListTopicsByGroupIdUseCase', () => {
     for (let index = 0; index < dataset.length; index++) {
         testInvalidResponseItemName(dataset[index], index);
     }
+
+    it('network error', async () => {
+        mockAxiosGet.mockRejectedValue(new Error('Network Error'));
+        const expectedResult = {
+            success: false,
+            data: [],
+            message: 'Network Error',
+        };
+
+        const actualResult = await GroupApi.getListTopics(1);
+
+        expect(actualResult.success).toEqual(expectedResult.success);
+        expect(actualResult.message).toEqual(expectedResult.message);
+        expect(actualResult.data).toEqual(expectedResult.data);
+    });
 });
