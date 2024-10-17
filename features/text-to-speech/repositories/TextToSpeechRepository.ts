@@ -1,5 +1,8 @@
+import { ErrorMessage } from '@/core/constants/ErrorMessages';
 import { ArrayHelper } from '@/core/helpers/ArrayHelper';
+import { MessageHelper } from '@/core/helpers/MessageHelper';
 import { StringHelper } from '@/core/helpers/StringHelper';
+import { Result } from '@/core/models/Result';
 
 import type { TextToSpeechRepositoryInterface } from '../interface-adapters/TextToSpeechRepositoryInterface';
 export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
@@ -25,14 +28,18 @@ export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
         });
     }
 
-    async speak(text: string): Promise<void> {
+    async speak(text: string): Promise<Result<any>> {
+        let result = new Result<any>();
+
         if (StringHelper.isHasValue(text) === false) {
-            return;
+            result.message = MessageHelper.format(ErrorMessage.INVALID_PARAMETER, 'text');
+            return result;
         }
 
         await this.initVoices();
         if (ArrayHelper.isHasItems(this.voices) === false) {
-            return;
+            result.message = 'Can not init list voices';
+            return result;
         }
 
         // Create a SpeechSynthesisUtterance
@@ -41,6 +48,9 @@ export class TextToSpeechRepository implements TextToSpeechRepositoryInterface {
         utterance.lang = 'en-US';
         // Speak the text
         speechSynthesis.speak(utterance);
+
+        result.success = true;
+        return result;
     }
 
     private getEnglishVoice(): SpeechSynthesisVoice | null {
